@@ -1,16 +1,4 @@
-local startupArgs = ({...})[1] or {}
 
-if getgenv().library ~= nil then
-    getgenv().library:Unload();
-end
-
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-
-local function gs(a)
-    return game:GetService(a)
-end
 local UserInputService = game:GetService("UserInputService") -- Services
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -1184,5 +1172,5 @@ function framework:createScreenLabel(args)
     insert(self.labels, screenLabel)
     return screenLabel
 end
-getgenv().library = library
-return library;
+framework("initialize")
+return framework
