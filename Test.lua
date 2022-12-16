@@ -774,6 +774,6 @@ Cache.Connections.OnTp = Player.OnTeleport:Connect(function(state)
             Nametags = Cache.Enabled.Nametags,
             AimVisCheck = Cache.Enabled.AimVisCheck,
             ESPVisCheck = Cache.Enabled.ESPVisCheck,
-        }) .."'\ntask.wait(5)\nloadstring(game:HttpGet(\"https://gist.githubusercontent.com/DeveloperMikey/0787e77a45d5f1f9a5de709d71ff2f25/raw/rift.lua\"))()")
+        }) .."'\ntask.wait(5)\nloadstring(game:HttpGet(\"https://github.com/4nt1Ven0m/Test-Lua/blob/main/Test.lua\"))()")
     end
 end)
