@@ -1,10 +1,3 @@
---[[
-
-    i'm sorry if you're gonna read this abomination of a script
-    just use it, it kinda works
-    made by mikeymikey @ v3rm
-
-]]
 
 
 if not game:IsLoaded() then
@@ -23,7 +16,7 @@ local Mouse = Player:GetMouse()
 local RunService = game:GetService("RunService")
 local HttpService = game:GetService("HttpService")
 local ContextActionService = game:GetService("ContextActionService")
-local KitList = require(game:GetService("ReplicatedStorage").TS.kit["kit-type"]).KitType
+
 
 
 local Cache = {
@@ -50,7 +43,7 @@ local Cache = {
 }
 
 if shared.enabledonrift then
-    local en = HttpService:JSONDecode(shared.enabledonrift)
+    local en = HttpService:JSONDecode(shared.enabledonTD)
     Cache.Enabled.ESP = en.ESP
     Cache.Enabled.Tracers = en.Tracers
     Cache.Enabled.Aimbot = en.Aimbot
@@ -132,7 +125,7 @@ local function ConstructUI()
 
     Cache.UI.MainFrameText = Drawing.new("Text")
     Cache.UI.MainFrameText.Visible = true
-    Cache.UI.MainFrameText.Text = "Rift Royale Script"
+    Cache.UI.MainFrameText.Text = "MEME.Solutions"
     Cache.UI.MainFrameText.Size = textsize
     Cache.UI.MainFrameText.Position = Vector2.new(0, Camera.ViewportSize.Y/2-200)
     Cache.UI.MainFrameText.Color = Color3.new(0.878431, 0.878431, 0.878431)
@@ -141,7 +134,7 @@ local function ConstructUI()
 
     Cache.UI.Credits = Drawing.new("Text")
     Cache.UI.Credits.Visible = true
-    Cache.UI.Credits.Text = "Made by MikeyMikey @ v3rmillion"
+    Cache.UI.Credits.Text = "KrakenM0dz"
     Cache.UI.Credits.Size = textsize
     Cache.UI.Credits.Position = Vector2.new(1, Camera.ViewportSize.Y/2-200 - ((Camera.ViewportSize.Y/2-200)/20)*2)
     Cache.UI.Credits.Color = Color3.new(0.878431, 0.878431, 0.878431)
@@ -150,7 +143,7 @@ local function ConstructUI()
 
     Cache.UI.Credits2 = Drawing.new("Text")
     Cache.UI.Credits2.Visible = true
-    Cache.UI.Credits2.Text = "discord.gg/NfcwzE2aM4"
+    Cache.UI.Credits2.Text = "[Private]"
     Cache.UI.Credits2.Size = textsize
     Cache.UI.Credits2.Position = Vector2.new(1, Camera.ViewportSize.Y/2-200 - (Camera.ViewportSize.Y/2-200)/20)
     Cache.UI.Credits2.Color = Color3.new(0.878431, 0.878431, 0.878431)
@@ -383,31 +376,7 @@ Cache.Connections.MouseDown = Mouse.Button1Down:Connect(function()
         Cache.UI.AimbotPower.Text = "Aimbot Power: "..Cache.Enabled.AimbotPower .. "%"
     end
     
-    local hoveringItemESP = checkInRange(Vector2.new(0, Camera.ViewportSize.Y/2-(200-(((Camera.ViewportSize.Y/2-200)/20)*6))-35), Vector2.new(Camera.ViewportSize.X/8-3, (Camera.ViewportSize.Y/2-200)/20))
-    if hoveringItemESP then
-        if Cache.Enabled.ItemESP then
-            Cache.UI.ItemESPButton.Text = "[ ] Item ESP"
-            Cache.Enabled.ItemESP = false
-            Cache.UI.ItemESPButton.Color = Color3.new(1, 1, 1)
-        else
-            Cache.UI.ItemESPButton.Text = "[x] Item ESP"
-            Cache.Enabled.ItemESP = true
-            Cache.UI.ItemESPButton.Color = Color3.new(0.203921, 1, 0.537254)
-        end
-    end
-
-    local hoveringNameESP = checkInRange(Vector2.new(0, Camera.ViewportSize.Y/2-(200-(((Camera.ViewportSize.Y/2-200)/20)*7))-35), Vector2.new(Camera.ViewportSize.X/8-3, (Camera.ViewportSize.Y/2-200)/20))
-    if hoveringNameESP then
-        if Cache.Enabled.Nametags then
-            Cache.UI.Nametags.Text = "[ ] Nametags"
-            Cache.Enabled.Nametags = false
-            Cache.UI.Nametags.Color = Color3.new(1, 1, 1)
-        else
-            Cache.UI.Nametags.Text = "[x] Nametags"
-            Cache.Enabled.Nametags = true
-            Cache.UI.Nametags.Color = Color3.new(0.203921, 1, 0.537254)
-        end
-    end
+ 
 
     local hoveringAimbotVis = checkInRange(Vector2.new(0, Camera.ViewportSize.Y/2-(200-(((Camera.ViewportSize.Y/2-200)/20)*8))-35), Vector2.new(Camera.ViewportSize.X/8-3, (Camera.ViewportSize.Y/2-200)/20))
     if hoveringAimbotVis then
@@ -422,18 +391,7 @@ Cache.Connections.MouseDown = Mouse.Button1Down:Connect(function()
         end
     end
 
-    local hoveringESPVis = checkInRange(Vector2.new(0, Camera.ViewportSize.Y/2-(200-(((Camera.ViewportSize.Y/2-200)/20)*9))-35), Vector2.new(Camera.ViewportSize.X/8-3, (Camera.ViewportSize.Y/2-200)/20))
-    if hoveringESPVis then
-        if Cache.Enabled.ESPVisCheck then
-            Cache.UI.ESPVis.Text = "[ ] ESP Visibility"
-            Cache.Enabled.ESPVisCheck = false
-            Cache.UI.ESPVis.Color = Color3.new(1, 1, 1)
-        else
-            Cache.UI.ESPVis.Text = "[x] ESP Visibility"
-            Cache.Enabled.ESPVisCheck = true
-            Cache.UI.ESPVis.Color = Color3.new(0.203921, 1, 0.537254)
-        end
-    end
+  
 
     local hoveringExit = checkInRange(Vector2.new(0, Camera.ViewportSize.Y/2-(200-(((Camera.ViewportSize.Y/2-200)/20)*19))-35), Vector2.new(Camera.ViewportSize.X/8-3, (Camera.ViewportSize.Y/2-200)/20))
     if hoveringExit then
