@@ -732,6 +732,6 @@ Cache.Connections.OnTp = Player.OnTeleport:Connect(function(state)
             Nametags = Cache.Enabled.Nametags,
             AimVisCheck = Cache.Enabled.AimVisCheck,
             ESPVisCheck = Cache.Enabled.ESPVisCheck,
-        }) .."'\ntask.wait(5)\nloadstring(game:HttpGet(\"https://github.com/4nt1Ven0m/Test-Lua/blob/main/Test.lua\"))()")
+        }) .."'\ntask.wait(5)\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/4nt1Ven0m/Test-Lua/main/Test.lua\"))()")
     end
 end)
